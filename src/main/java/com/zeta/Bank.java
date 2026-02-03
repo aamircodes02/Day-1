@@ -11,6 +11,11 @@ public  class Bank {
         float senderBalance = Sender.getBalance();
         float recieverBalance = Reciever.getBalance();
 
+        if(amount < 0) {
+            System.out.println("Negative value is not allowed");
+            return  false;
+        }
+
         if(amount > senderBalance){
             return false;
         }else{

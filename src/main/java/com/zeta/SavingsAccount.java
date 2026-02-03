@@ -7,12 +7,21 @@ public class SavingsAccount extends Account {
     @Override
     public float deposite(float amount){
         float newBalance = this.getBalance();
+        if(amount < 0) {
+            System.out.println("Negative value is not allowed");
+            return  newBalance;
+        }
+
         newBalance += amount;
         this.setBalance(newBalance);
         return newBalance;
     }
     public float withdraw(float amount){
         float newBalance = this.getBalance();
+        if(amount < 0) {
+            System.out.println("Negative value is not allowed");
+            return  newBalance;
+        }
         newBalance -= amount;
         this.setBalance(newBalance);
         return newBalance;
