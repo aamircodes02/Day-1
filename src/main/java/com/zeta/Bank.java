@@ -7,5 +7,20 @@ public  class Bank {
         this.name = name;
     }
 
-    public transfer()
+    public boolean transfer(Account Sender,Account Reciever , float amount){
+        float senderBalance = Sender.getBalance();
+        float recieverBalance = Reciever.getBalance();
+
+        if(amount > senderBalance){
+            return false;
+        }else{
+            senderBalance -= amount;
+            recieverBalance += amount;
+
+            Sender.setBalance(senderBalance);
+            Reciever.setBalance(recieverBalance);
+
+            return true;
+        }
+    }
 }

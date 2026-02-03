@@ -6,9 +6,15 @@ public class SavingsAccount extends Account {
     }
     @Override
     public float deposite(float amount){
-        return 0;
+        float newBalance = this.getBalance();
+        newBalance += amount;
+        this.setBalance(newBalance);
+        return newBalance;
     }
     public float withdraw(float amount){
-        return 0;
+        float newBalance = this.getBalance();
+        newBalance -= amount;
+        this.setBalance(newBalance);
+        return newBalance;
     }
 }
